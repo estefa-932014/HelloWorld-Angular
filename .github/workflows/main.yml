@@ -4,7 +4,13 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello World!"
-  
-  
+      - name: Checkout
+        uses: actions/checkout@v4.1.5
+      - name: Setup Node
+        uses: actions/setup-node@v4.0.2
+        with:
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: '14'
+      - run:  ng build && ng test
+      - run:  ng serve
+      - run: curl -v  http://localhost:4200/
