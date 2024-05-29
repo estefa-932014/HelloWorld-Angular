@@ -11,7 +11,7 @@ jobs:
         with:
           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
           node-version: '14'
-      - run: npm install    
-      - run: ng build && ng test
-      - run: ng serve
+      - run: npm install
+      - run: npm run build && npm run test
+      - run: npm run start
       - run: curl -v  http://localhost:4200/
