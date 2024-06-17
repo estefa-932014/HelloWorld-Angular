@@ -13,5 +13,4 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm run build
-      - run: npm run start
-      - run: curl -v  http://localhost:4200/
+      - run: npm run deploy
